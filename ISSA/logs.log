@@ -1,0 +1,22 @@
+2024-03-14 16:44:00,206 - ERROR - Failed to create car: (builtins.TypeError) Not a boolean value: '1'
+[SQL: INSERT INTO cars (brand, model, year, owner_id, current_renter, available) VALUES (%(brand)s, %(model)s, %(year)s, %(owner_id)s, %(current_renter)s, %(available)s) RETURNING cars.car_id]
+[parameters: [{'year': '1', 'owner_id': 123, 'brand': '1', 'available': '1', 'current_renter': '1', 'model': '1'}]]
+2024-03-14 16:45:41,039 - ERROR - Failed to create car: (builtins.TypeError) Not a boolean value: '1'
+[SQL: INSERT INTO cars (brand, model, year, owner_id, current_renter, available) VALUES (%(brand)s, %(model)s, %(year)s, %(owner_id)s, %(current_renter)s, %(available)s) RETURNING cars.car_id]
+[parameters: [{'brand': '1', 'owner_id': '1', 'available': '1', 'current_renter': '1', 'model': '1', 'year': '1'}]]
+2024-03-14 16:51:19,713 - ERROR - Failed to create car: (psycopg2.errors.ForeignKeyViolation) insert or update on table "cars" violates foreign key constraint "cars_current_renter_fkey"
+DETAIL:  Key (current_renter)=(1) is not present in table "renters".
+
+[SQL: INSERT INTO cars (brand, model, year, owner_id, current_renter, available) VALUES (%(brand)s, %(model)s, %(year)s, %(owner_id)s, %(current_renter)s, %(available)s) RETURNING cars.car_id]
+[parameters: {'brand': '1', 'model': '1', 'year': '1', 'owner_id': 123, 'current_renter': '1', 'available': True}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-03-14 16:55:45,681 - ERROR - Failed to create car: (psycopg2.errors.ForeignKeyViolation) insert or update on table "cars" violates foreign key constraint "cars_current_renter_fkey"
+DETAIL:  Key (current_renter)=(1) is not present in table "renters".
+
+[SQL: INSERT INTO cars (brand, model, year, owner_id, current_renter, available) VALUES (%(brand)s, %(model)s, %(year)s, %(owner_id)s, %(current_renter)s, %(available)s) RETURNING cars.car_id]
+[parameters: {'brand': '1', 'model': '1', 'year': '1', 'owner_id': 1, 'current_renter': '1', 'available': True}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-03-14 16:58:48,139 - ERROR - Failed to create car: Could not determine join condition between parent/child tables on relationship Owner.cars - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2024-03-14 17:00:11,869 - ERROR - Failed to create car: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Owner(owners)]'. Original exception was: Could not determine join condition between parent/child tables on relationship Owner.cars - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2024-03-14 17:00:30,604 - ERROR - Failed to create car: Could not determine join condition between parent/child tables on relationship Owner.cars - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2024-03-14 17:22:02,327 - ERROR - Invalid message received from client: Client Id: 1, Client Type: 0, Message Id: 0, Payload: 1 1 1 1
